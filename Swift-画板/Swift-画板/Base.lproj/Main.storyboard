@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_画板" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="线宽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2q-PY-4Nw">
+                                <rect key="frame" x="15" y="612" width="35" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="MXj-uX-0oV"/>
+                                    <constraint firstAttribute="height" constant="40" id="tel-5J-9nn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDC-PY-EGQ">
+                                <rect key="frame" x="329" y="612" width="31" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="QZ4-Po-pjV"/>
+                                    <constraint firstAttribute="height" constant="40" id="SDq-A6-gWy"/>
+                                </constraints>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WlB-ye-qkb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUM-To-PFF">
+                                <rect key="frame" x="288" y="612" width="31" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="GFt-ih-y6b"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ye1-qi-iJC"/>
+                                </constraints>
+                                <state key="normal" title="清除"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XJQ-Np-Mlf"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aTs-d8-5xL">
+                                <rect key="frame" x="68" y="622" width="202" height="31"/>
+                                <connections>
+                                    <action selector="configLineWidth:" destination="BYZ-38-t0r" eventType="valueChanged" id="4da-Ht-Lpn"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jv-Fu-mfh" customClass="PaintView" customModule="Swift_画板" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="375" height="582"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aUM-To-PFF" firstAttribute="leading" secondItem="aTs-d8-5xL" secondAttribute="trailing" constant="20" id="1cH-IZ-SPQ"/>
+                            <constraint firstItem="aTs-d8-5xL" firstAttribute="leading" secondItem="F2q-PY-4Nw" secondAttribute="trailing" constant="20" id="3Kj-ga-FFa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aUM-To-PFF" secondAttribute="bottom" constant="15" id="3Yr-DO-JRF"/>
+                            <constraint firstItem="1jv-Fu-mfh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Ohf-in-sdy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xDC-PY-EGQ" secondAttribute="bottom" constant="15" id="Q2s-pi-mdD"/>
+                            <constraint firstItem="F2q-PY-4Nw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="QNS-Ka-bri"/>
+                            <constraint firstAttribute="trailing" secondItem="xDC-PY-EGQ" secondAttribute="trailing" constant="15" id="SJd-Pz-MUO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F2q-PY-4Nw" secondAttribute="bottom" constant="15" id="XlI-9A-Xg6"/>
+                            <constraint firstItem="aTs-d8-5xL" firstAttribute="top" secondItem="1jv-Fu-mfh" secondAttribute="bottom" constant="10" id="ikI-cS-9oP"/>
+                            <constraint firstItem="xDC-PY-EGQ" firstAttribute="leading" secondItem="aUM-To-PFF" secondAttribute="trailing" constant="10" id="jg1-tB-fhC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aTs-d8-5xL" secondAttribute="bottom" constant="15" id="qUR-74-pw2"/>
+                            <constraint firstItem="1jv-Fu-mfh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vLf-wr-oeb"/>
+                            <constraint firstAttribute="trailing" secondItem="1jv-Fu-mfh" secondAttribute="trailing" id="vSF-6k-hzI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clearBtn" destination="aUM-To-PFF" id="HBm-Ce-BAf"/>
+                        <outlet property="paintView" destination="1jv-Fu-mfh" id="PNP-Sv-jnM"/>
+                        <outlet property="saveBtn" destination="xDC-PY-EGQ" id="SpL-Ql-tag"/>
+                        <outlet property="slide" destination="aTs-d8-5xL" id="GRe-nL-RoP"/>
+                        <outlet property="widthLabel" destination="F2q-PY-4Nw" id="OHA-Al-ZJI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
